@@ -35,27 +35,34 @@
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <section class="header">
 
-  <div class="container">
-    <div class="row">
-      <div class="one-half column" style="margin-top: 25%">
-        <h4><%= yield %></h4>
-        <button>Submit</button>
-      </div>
-      <div class="five columns" style="margin-top: 25%">
-        <div class="left-grid">
-          <h5>I'm</h5>
-          <h5>that</h5>
-          <h5>because</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  </section>
 
   
+
+  <div class="container">
+    <section class="header">
+      <div class="row" style="margin-top: 25%">
+
+        <h4 class="title"><%= yield %></h4>
+            <div class="headbuttons">
+              <form style="display: inline;"method="get" action="/late">
+                <button class="headerbuttons">Late</button>
+              </form>
+              <form method="get" action="/absent">
+                <button class="headerbuttons">Absent</button>
+              </form>
+              <form method="get" action="/dont_want_to">
+                <button class="headerbuttons">Don't Want To</button>
+              </form>
+              <form method="get" action="/dont_have_it">
+                <button class="headerbuttons">Don't Have It</button>
+              </form>
+            </div>
+      </div>
+    </section>
+  </div>
+
+
 
   <!-- End Document
   ------------------------------ -->
