@@ -1,0 +1,24 @@
+button {
+  background-color: #5bc1e5; }
+
+.navbar-list {
+  list-style: none;
+  margin-bottom: 0; }
+  .navbar-list li {
+    position: relative;
+    display: list-item;
+    text-align: -webkit-match-parent; }
+
+.left-grid {
+  background: #EEE;
+  text-align: left;
+  border-radius: 30px;
+  font-size: 1rem;
+  height: 300px;
+  line-height: 30px;
+  margin-bottom: .75rem;
+  font-weight: 600;
+  letter-spacing: .1rem;
+  padding: 15px; }
+
+/*# sourceMappingURL=application.css.map */
