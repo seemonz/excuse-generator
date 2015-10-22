@@ -9,7 +9,8 @@ get '/late' do
   # use helper method to check if a unique excuse exists
   #   this check method can save if its a unique excuse
   # take excuse object and save as instance variable and send to erb for display.
-  erb :late 
+  @category = 'late'
+  erb :excuse_gen
 end
 
 # clicking absent button
@@ -18,7 +19,8 @@ get '/absent' do
   # use helper method to check if a unique excuse exists
   #   this check method can save if its a unique excuse
   # take excuse object and save as instance variable and send to erb for display.
-  erb :absent 
+  @category = 'absent'
+  erb :excuse_gen
 end
 
 # clicking dont_want_to button
@@ -27,7 +29,8 @@ get '/dont_want_to' do
   # use helper method to check if a unique excuse exists
   #   this check method can save if its a unique excuse
   # take excuse object and save as instance variable and send to erb for display.
-  erb :dont_want_to 
+  @category = 'dont_want_to'
+  erb :excuse_gen
 end
 
 # clicking dont_have_it button
@@ -36,5 +39,6 @@ get '/dont_have_it' do
   # use helper method to check if a unique excuse exists
   #   this check method can save if its a unique excuse
   # take excuse object and save as instance variable and send to erb for display.
-  erb :dont_have_it 
+  @category = 'dont_have_it'
+  erb :excuse_gen
 end
