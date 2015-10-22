@@ -1,5 +1,5 @@
 button {
-  background-color: #5bc1e5; }
+  background-color: #c1d5e5; }
 
 .navbar-list {
   list-style: none;
@@ -20,5 +20,8 @@ button {
   font-weight: 600;
   letter-spacing: .1rem;
   padding: 15px; }
+
+button {
+  margin: 30px; }
 
 /*# sourceMappingURL=application.css.map */

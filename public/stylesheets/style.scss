@@ -1,4 +1,4 @@
-$primary-color: #5bc1e5;
+$primary-color: #c1d5e5;
 
 button{
   background-color: $primary-color}
@@ -24,4 +24,8 @@ button{
   font-weight: 600;
   letter-spacing: .1rem;
   padding: 15px;
+}
+
+button {
+  margin: 30px;
 }
