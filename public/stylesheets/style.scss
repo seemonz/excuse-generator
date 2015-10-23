@@ -1,58 +1,107 @@
 $primary-color: #c1d5e5;
+$secondary-color: #eee;
 
 // main excuse
+
   .headerbuttons{
     background-color: $primary-color;
-    margin: 30px
+    margin: 30px;
   }
 
   .header {
     text-align: center;
-    margin-top: 30%
+    margin-top: 30%;
   }
 
   @media (max-height: 400px) {
     .header {
-      margin-top: 10%
+      margin-top: 10%;
     }
   }
 
   #excuse-text  {
-    min-height: 80px
+    min-height: 80px;
   }
 
+  .owl-row:after {
+      content: "";
+      clear: both;
+      display: table;
+  }
+
+  .owl-columns {
+    float: left;
+    width: 25%;
+    text-align: center;
+    font-size: 1.5em;
+    position: relative;
+
+    p {
+      background-color: $primary-color;
+      border-radius: 5px;
+      position: absolute;
+      width: 70%;
+      top: 80px;
+      left: 35px;
+    }
+  }
+
+  .input-owls {
+    outline: 0;
+  }
+
+  @media (max-width: 600px) {
+    .owl-columns {
+
+      p {
+        position: relative;
+      }
+    }
+
+    .owl-row:after {
+      display: inline;
+    }
+  }
+
+
 // top excuses 
-#top-excuse-buttons {
-  background: $primary-color
-}
 
-#top-excuse-head {
-  border-top: 2px solid #eee;
-  border-bottom: 2px solid #eee;
-  margin-left: 20%;
-  margin-right: 20%;
-  position: center
-}
+  #top-excuse-buttons {
+    background: $primary-color
+  }
 
-#top-excuse-ul {
-  list-style: none;
-  padding: 50px
-}
+  #top-excuse-head {
+    border-top: 2px solid #eee;
+    border-bottom: 2px solid #eee;
+    margin-left: 20%;
+    margin-right: 20%;
+    position: center;
+    text-align: center;
+    font-weight: 1000;
+  }
 
-#top-excuse-li {
-  padding: 5px
-}
+  #top-excuse-ul {
+    list-style: none;
+    padding: 50px
+  }
 
-#top-excuse {
-  text-align: center
-}
+  #top-excuse-li {
+    padding: 5px
+  }
 
-#main-page-space {
-  width: 100%;
-  height: 400px
-}
+  #top-excuse {
+    text-align: left
+  }
 
-#bottom-page-space {
-  width: 100%;
-  height: 200px
-}
+
+// spacing
+
+  #main-page-space {
+    width: 100%;
+    height: 475px
+  }
+
+  #bottom-page-space {
+    width: 100%;
+    height: 30px
+  }
