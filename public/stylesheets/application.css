@@ -3,6 +3,13 @@
   margin: 30px; }
 
 .header {
-  text-align: center; }
+  text-align: center;
+  margin-top: 30%; }
+
+@media (max-height: 400px) {
+  .header {
+    margin-top: 10%; } }
+#excuse-text {
+  min-height: 80px; }
 
 /*# sourceMappingURL=application.css.map */
