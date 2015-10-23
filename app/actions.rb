@@ -1,13 +1,19 @@
 helpers do
 
   def save_excuse
-    excuse = Excuse.new(beginnings_id: @beginning.id, middles_id: @middle.id, finals_id: @final.id)
-    if excuse
-      excuse.save
-    else
-      excuse = Excuse.where(beginnings_id: @beginning.id, middles_id: @middle.id, finals_id: @final.id)
-    end
+    Excuse.where(:beginnings_id => @beginning.id, :middles_id => @middle.id, :finals_id => @final.id).first_or_create
+    #binding.pry
+
+    # if excuse_repeat?
+    #   @excuse = Excuse.where("beginnings_id = ? AND middles_id = ? AND finals_id = ?", @beginning.id, @middle.id, @final.id)
+    # else
+    #   @excuse.save
+    # end
   end
+
+  # def excuse_repeat?
+  #   Excuse.where("beginnings_id = ? AND middles_id = ? AND finals_id = ?", @beginning.id, @middle.id, @final.id).length > 0
+  # end
 
 end
 
@@ -23,8 +29,14 @@ get '/:category' do
   @beginning = Beginning.get_phrase(params[:category])
   @middle = Middle.get_phrase
   @final = Final.get_phrase
-  #save_excuse
+  save_excuse
   erb :excuse_gen
+end
+
+get '/upvote' do
+  upvote = Upvote.new
+  upvote.save
+  redirect '/'
 end
 
 # clicking absent button
