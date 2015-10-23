@@ -2,8 +2,6 @@ class Beginning < ActiveRecord::Base
   
   has_many :excuses
 
-  def self.sample_id
-    Beginning.pluck(:id).sample
-  end
+  scope :get_phrase, ->(category) { (where("category = ?", category)).sample }
 
 end

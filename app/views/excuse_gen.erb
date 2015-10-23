@@ -1,6 +1,2 @@
-<% beginning = Beginning.find(Beginning.where(category: @category).sample_id) %>
-<% middle = Middle.find(Middle.sample_id) %>
-<% final = Final.find(Final.sample_id) %>
 
-
-<p><%= beginning.phrase %> because <%= middle.phrase %> so <%= final.phrase %></p>
+<p><%= @beginning.phrase %> because <%= @middle.phrase %> so <%= @final.phrase %></p>
