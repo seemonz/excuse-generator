@@ -22,12 +22,23 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="stylesheet" href="/stylesheets/normalize.css">
   <link rel="stylesheet" href="/stylesheets/skeleton.css">
-  <link rel="stylesheet" href="/stylesheets/application.css"
+  <link rel="stylesheet" href="/stylesheets/application.css">
 
   <!--  JS???
-  --------------------------------------------------- -->
+  -------------------------------------------------- -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/javascript/application.js"></script>
+
+
+  <!-- for texillate
+  -------------------------------------------------- -->
+  <link rel="stylesheet" href="/stylesheets/animate.min.css">
+  <script type="text/javascript" src="jquery-1.11.3.js"></script>
+  <script src="jquery.lettering.js"></script>
+  <script src="jquery.textillate.js"></script>
+  <script src="excuse_text.js"></script>
+
+
 
 </head>
 
@@ -36,35 +47,32 @@
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
 
-
-  
-
   <div class="container">
     <section class="header">
-      <div class="row" style="margin-top: 30%">
 
+      <div id="excuse-text" >
         <h4 class="title"><%= yield %></h4>
-
-            <div class="headbuttons">
-              <table>
-                <form style="display: inline;"method="get" action="/late">
-                  <button class="headerbuttons">Late</button>
-                </form>
-                <form method="get" action="/absent">
-                  <button class="headerbuttons">Absent</button>
-                </form>
-                <form method="get" action="/dont_want_to">
-                  <button class="headerbuttons">Don't Want To</button>
-                </form>
-                <form method="get" action="/dont_have_it">
-                  <button class="headerbuttons">Don't Have It</button>
-                </form>
-              </table>
-            </div>
       </div>
+
+          <div id="headbuttons">
+            <table>
+              <form method="get" action="/late">
+                <button class="headerbuttons">Late</button>
+              </form>
+              <form method="get" action="/absent">
+                <button class="headerbuttons">Absent</button>
+              </form>
+              <form method="get" action="/dont_want_to">
+                <button class="headerbuttons">Don't Want To</button>
+              </form>
+              <form method="get" action="/dont_have_it">
+                <button class="headerbuttons">Don't Have It</button>
+              </form>
+            </table>
+          </div>
+
     </section>
   </div>
-
 
 
   <!-- End Document
