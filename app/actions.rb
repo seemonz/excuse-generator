@@ -23,7 +23,7 @@ get '/:category' do
   @beginning = Beginning.get_phrase(params[:category])
   @middle = Middle.get_phrase
   @final = Final.get_phrase
-  # save_excuse
+  #save_excuse
   erb :excuse_gen
 end
 
