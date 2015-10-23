@@ -1,6 +1,8 @@
 .headerbuttons {
   background-color: #c1d5e5;
-  margin: 30px;
-  float: left; }
+  margin: 30px; }
+
+.header {
+  text-align: center; }
 
 /*# sourceMappingURL=application.css.map */
