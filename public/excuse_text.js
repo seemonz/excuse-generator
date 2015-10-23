@@ -9,7 +9,8 @@ $(function () {
     }, 
 
     out: {
-      effect: 'fadeOutDown'
+      effect: 'fadeOutDown',
+      sync: true
     }  
   });
 })
