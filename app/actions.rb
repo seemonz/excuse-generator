@@ -1,5 +1,14 @@
 helpers do
 
+  def pull_top_excuses
+    top5_excuses = Excuse.first(5)
+    top5_excuses.each do |excuse|
+      beg = Beginning.find(excuse.beginnings_id)
+      mid = Middle.find(excuse.middles_id)
+      fin = Final.find(excuse.finals_id)
+    end
+  end
+
   def save_excuse
     Excuse.where(:beginnings_id => @beginning.id, :middles_id => @middle.id, :finals_id => @final.id).first_or_create
     #binding.pry
@@ -30,6 +39,7 @@ get '/:category' do
   @middle = Middle.get_phrase
   @final = Final.get_phrase
   save_excuse
+  # @top5_excuses = Excuse.first(5)
   erb :excuse_gen
 end
 
@@ -39,7 +49,7 @@ get '/upvote' do
   redirect '/'
 end
 
-get '/top_excuses' do
-  @top5_excuses = Excuse.first(5)
-  erb :top_excuses
-end
+# get '/top_excuses' do
+#   @top5_excuses = Excuse.first(5)
+#   erb :excuse_gen
+# end
