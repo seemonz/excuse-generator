@@ -19,6 +19,7 @@ end
 
 # Homepage (Root path)
 get '/' do
+  @top5_excuses = Excuse.get_random_excuses
   erb :excuse_gen
 end
 
