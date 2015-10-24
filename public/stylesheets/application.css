@@ -40,6 +40,10 @@
 
   .owl-row:after {
     display: inline; } }
+a {
+  text-decoration: none;
+  color: inherit; }
+
 #top-excuse-buttons {
   background: #c1d5e5; }
 

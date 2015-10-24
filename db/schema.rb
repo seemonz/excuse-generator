@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151023133402) do
+ActiveRecord::Schema.define(version: 20151024223836) do
 
   create_table "beginnings", force: :cascade do |t|
     t.string   "phrase"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20151023133402) do
     t.integer  "finals_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "upvote_count"
+    t.integer  "upvote_count",  default: 0
   end
 
   add_index "excuses", ["beginnings_id", "middles_id", "finals_id"], name: "index_excuses_on_beginnings_id_and_middles_id_and_finals_id", unique: true

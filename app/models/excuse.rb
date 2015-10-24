@@ -7,9 +7,11 @@ class Excuse < ActiveRecord::Base
 
   scope :get_random_excuses, -> { offset(rand(self.count)).first(5) }
 
-  def upvote_count
-    self.upvote.size
-  end
+  # attr_reader :upvote_count
+
+  # def upvote_count
+  #   self.upvote.size
+  # end
 
   def beginning
     Beginning.find(beginnings_id)
@@ -21,6 +23,11 @@ class Excuse < ActiveRecord::Base
 
   def final
     Final.find(finals_id)
+  end
+
+
+  def increment_upvote
+    self.upvote_count += 1
   end
 
 end

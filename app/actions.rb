@@ -15,11 +15,16 @@ helpers do
   #   Excuse.where("beginnings_id = ? AND middles_id = ? AND finals_id = ?", @beginning.id, @middle.id, @final.id).length > 0
   # end
 
+  def top_excuses
+    Excuse.limit(5).order('upvote_count desc') # this works correctly
+  end
+
 end
+
 
 # Homepage (Root path)
 get '/' do
-  @top5_excuses = Excuse.get_random_excuses
+  @top5_excuses = top_excuses
   erb :excuse_gen
 end
 
@@ -31,14 +36,15 @@ get '/:category' do
   @middle = Middle.get_phrase
   @final = Final.get_phrase
   save_excuse
-  @top5_excuses = Excuse.get_random_excuses
+  @top5_excuses = top_excuses
   erb :excuse_gen
 end
 
 get '/upvote' do
-  upvote = Upvote.new
-  upvote.save
-  redirect '/'
+  # not sure how to select the current excuse displayed. we need to grab that excuse call the increment_upvote method and save it.
+  vote_excuse = Excuse.last
+  vote_excuse.increment_upvote
+  vote_excuse.save
 end
 
 # get '/top_excuses' do
