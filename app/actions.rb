@@ -15,7 +15,12 @@ helpers do
   #   Excuse.where("beginnings_id = ? AND middles_id = ? AND finals_id = ?", @beginning.id, @middle.id, @final.id).length > 0
   # end
 
+  def top_excuses
+    Excuse.limit(5).order('upvote_count desc') # this works correctly
+  end
+
 end
+
 
 # Homepage (Root path)
 get '/' do
@@ -36,9 +41,8 @@ get '/:category' do
 end
 
 get '/upvote' do
-  upvote = Upvote.new
-  upvote.save
-  redirect '/'
+  # not sure how to select the current excuse displayed. we need to grab that excuse call the increment_upvote method and save it.
+  Excuse.where(:beginnings_id => @beginning.id, :middles_id => @middle.id, :finals_id => @final.id).increment_upvote
 end
 
 # get '/top_excuses' do
