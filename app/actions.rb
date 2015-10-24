@@ -35,7 +35,7 @@ get '/:category' do
   @middle = Middle.get_phrase
   @final = Final.get_phrase
   save_excuse
-  @top5_excuses = Excuse.first(5)
+  @top5_excuses = Excuse.get_random_excuses
   erb :excuse_gen
 end
 
