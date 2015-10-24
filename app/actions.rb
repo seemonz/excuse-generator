@@ -24,7 +24,7 @@ end
 
 # Homepage (Root path)
 get '/' do
-  @top5_excuses = Excuse.get_random_excuses
+  @top5_excuses = top_excuses
   erb :excuse_gen
 end
 
@@ -36,13 +36,15 @@ get '/:category' do
   @middle = Middle.get_phrase
   @final = Final.get_phrase
   save_excuse
-  @top5_excuses = Excuse.get_random_excuses
+  @top5_excuses = top_excuses
   erb :excuse_gen
 end
 
 get '/upvote' do
   # not sure how to select the current excuse displayed. we need to grab that excuse call the increment_upvote method and save it.
-  Excuse.where(:beginnings_id => @beginning.id, :middles_id => @middle.id, :finals_id => @final.id).increment_upvote
+  vote_excuse = Excuse.last
+  vote_excuse.increment_upvote
+  vote_excuse.save
 end
 
 # get '/top_excuses' do
