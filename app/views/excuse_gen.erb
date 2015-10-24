@@ -1,3 +1,83 @@
 
-<p class="tlt"><%= @beginning.phrase %> because <%= @middle.phrase %> so <%= @final.phrase %></p>
 
+ <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<div class="container">
+  <section class="header">
+
+    <% if @beginning == nil %>
+      <div id="excuse-text" >
+        <h4 class="title"><p class="tlt"><p>why do you need an excuse....</p></p></h4>
+      </div>
+    <% else %>
+      <div id="excuse-text" >
+        <h4 class="title"><p class="tlt"><%= @beginning.phrase %> because <%= @middle.phrase %> so <%= @final.phrase %></p></h4>
+      </div>
+    <% end %>
+
+<!-- Buttons
+--------- -->
+
+    <div class="owl-row">
+      <div class="owl-columns">
+        <a href="/late">
+          <img src="/images/owl_late.png">
+          <p>Late</p>
+        </a>
+      </div>
+      <div class="owl-columns">
+       <a href="/absent">
+          <img src="/images/owl_absence.png">
+          <p>Absent</p>
+        </a>
+      </div>
+      <div class="owl-columns">
+       <a href="/dont_want_to">
+          <img src="/images/owl_dont_want_to.png">
+          <p>Don't Want To</p>
+        </a>
+      </div>
+      <div class="owl-columns">
+       <a href="/dont_have_it">
+          <img src="/images/owl_dont_have_it.png">
+          <p>Don't Have It</p>
+        </a>
+      </div>
+    </div>
+
+  </section>
+
+  
+
+
+  <!-- spacing
+  -------- -->
+
+  <div id="main-page-space">
+  </div>
+
+  <!-- Top 10 
+  --------------- -->
+
+
+
+  <div id="top-excuse-head">
+    <p><h4>Top Excuses</h4></p>
+  </div>
+
+  <div id="top-excuse">
+    <div id="top-excuse-list">
+      <ul id="top-excuse-ul">
+        
+      </ul>
+    </div>
+  </div>
+
+  <!-- spacing
+  -------- -->
+
+  <div id="bottom-page-space">
+  </div>  
+
+</div>

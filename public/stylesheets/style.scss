@@ -23,6 +23,8 @@ $secondary-color: #eee;
     min-height: 80px;
   }
 
+// owls
+
   .owl-row:after {
       content: "";
       clear: both;
@@ -71,8 +73,8 @@ $secondary-color: #eee;
   }
 
   #top-excuse-head {
-    border-top: 2px solid #eee;
-    border-bottom: 2px solid #eee;
+    border-top: 2px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
     margin-left: 20%;
     margin-right: 20%;
     position: center;

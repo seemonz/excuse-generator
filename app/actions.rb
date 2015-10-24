@@ -19,7 +19,7 @@ end
 
 # Homepage (Root path)
 get '/' do
-  erb :index
+  erb :excuse_gen
 end
 
 # clicking late button
@@ -39,32 +39,7 @@ get '/upvote' do
   redirect '/'
 end
 
-# clicking absent button
-# get '/absent' do
-#   @category = 'absent'
-#   get_beginning
-#   get_middle
-#   get_final
-#   save_excuse
-#   erb :excuse_gen
-# end
-
-# # clicking dont_want_to button
-# get '/dont_want_to' do
-#   @category = 'dont_want_to'
-#   get_beginning
-#   get_middle
-#   get_final
-#   save_excuse
-#   erb :excuse_gen
-# end
-
-# # clicking dont_have_it button
-# get '/dont_have_it' do
-#   @category = 'dont_have_it'
-#   get_beginning
-#   get_middle
-#   get_final
-#   save_excuse
-#   erb :excuse_gen
-# end
+get '/top_excuses' do
+  @top5_excuses = Excuse.first(5)
+  erb :top_excuses
+end
