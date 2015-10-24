@@ -1,12 +1,8 @@
 helpers do
 
   def pull_top_excuses
-    top5_excuses = Excuse.first(5)
-    top5_excuses.each do |excuse|
-      beg = Beginning.find(excuse.beginnings_id)
-      mid = Middle.find(excuse.middles_id)
-      fin = Final.find(excuse.finals_id)
-    end
+    @top5_excuses = Excuse.first(5)
+    
   end
 
   def save_excuse
@@ -39,7 +35,7 @@ get '/:category' do
   @middle = Middle.get_phrase
   @final = Final.get_phrase
   save_excuse
-  # @top5_excuses = Excuse.first(5)
+  @top5_excuses = Excuse.first(5)
   erb :excuse_gen
 end
 

@@ -13,4 +13,16 @@ class Excuse < ActiveRecord::Base
   #   self.first(5)
   # end
 
+  def beginning
+    Beginning.find(beginnings_id)
+  end
+
+  def middle
+    Middle.find(middles_id)
+  end
+
+  def final
+    Final.find(finals_id)
+  end
+
 end
