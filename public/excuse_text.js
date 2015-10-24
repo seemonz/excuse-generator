@@ -4,7 +4,7 @@
 $(function () {
   $('.tlt').textillate({ 
     in: { 
-      effect: 'fadeInDown' ,
+      effect: 'fadeInLeft' ,
       sync: true
     }, 
 

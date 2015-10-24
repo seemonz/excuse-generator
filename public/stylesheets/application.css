@@ -10,7 +10,7 @@
   .header {
     margin-top: 10%; } }
 #excuse-text {
-  min-height: 80px; }
+  min-height: 200px; }
 
 .owl-row:after {
   content: "";
@@ -43,6 +43,9 @@
 a {
   text-decoration: none;
   color: inherit; }
+
+#space-below-upvote {
+  height: 50px; }
 
 #top-excuse-buttons {
   background: #c1d5e5; }

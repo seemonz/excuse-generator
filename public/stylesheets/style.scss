@@ -18,9 +18,9 @@ $secondary-color: #eee;
       margin-top: 10%;
     }
   }
-
+  // this is here to stop the buttons from shifting on refresh
   #excuse-text  {
-    min-height: 80px;
+    min-height: 200px;
   }
 
 // owls
@@ -68,6 +68,10 @@ $secondary-color: #eee;
   a {
     text-decoration: none;
     color: inherit;
+  }
+
+  #space-below-upvote {
+    height: 50px;
   }
 
 // top excuses 
