@@ -1,10 +1,5 @@
 helpers do
 
-  def pull_top_excuses
-    @top5_excuses = Excuse.first(5)
-    
-  end
-
   def save_excuse
     Excuse.where(:beginnings_id => @beginning.id, :middles_id => @middle.id, :finals_id => @final.id).first_or_create
     #binding.pry
@@ -24,10 +19,11 @@ end
 
 # Homepage (Root path)
 get '/' do
+  @top5_excuses = Excuse.get_random_excuses
   erb :excuse_gen
 end
 
-# clicking late button
+# button click routes
 get '/:category' do 
   #WORRY ABOUT /NIL OR /GARBARGEGEGE
   # binding.pry
@@ -35,7 +31,7 @@ get '/:category' do
   @middle = Middle.get_phrase
   @final = Final.get_phrase
   save_excuse
-  @top5_excuses = Excuse.first(5)
+  @top5_excuses = Excuse.get_random_excuses
   erb :excuse_gen
 end
 

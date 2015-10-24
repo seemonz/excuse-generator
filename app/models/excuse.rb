@@ -5,13 +5,11 @@ class Excuse < ActiveRecord::Base
   belongs_to :final
   has_many :upvotes
 
+  scope :get_random_excuses, -> { offset(rand(self.count)).first(5) }
+
   def upvote_count
     self.upvote.size
   end
-
-  # def top_five
-  #   self.first(5)
-  # end
 
   def beginning
     Beginning.find(beginnings_id)
