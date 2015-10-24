@@ -60,8 +60,6 @@
   <!-- Top 10 
   --------------- -->
 
-
-
   <div id="top-excuse-head">
     <p><h4>Top Excuses</h4></p>
   </div>
@@ -69,10 +67,14 @@
   <div id="top-excuse">
     <div id="top-excuse-list">
       <ul id="top-excuse-ul">
-        
+         <% @top5_excuses.each do |excuse| %>
+          <li id="top-excuse-li"><h4><%= excuse.beginning.phrase %> because <%= excuse.middle.phrase %> so <%= excuse.final.phrase %></h4></li>
+        <% end %>
       </ul>
     </div>
   </div>
+
+
 
   <!-- spacing
   -------- -->
