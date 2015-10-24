@@ -11,10 +11,6 @@ class Excuse < ActiveRecord::Base
     self.upvote.size
   end
 
-  # def top_five
-  #   self.first(5)
-  # end
-
   def beginning
     Beginning.find(beginnings_id)
   end
