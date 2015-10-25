@@ -1,5 +1,6 @@
 $primary-color: #c1d5e5;
 $secondary-color: #eee;
+$tertiary-color: #cacaca;
 
 // main excuse
 
@@ -18,9 +19,9 @@ $secondary-color: #eee;
       margin-top: 10%;
     }
   }
-
+  // this is here to stop the buttons from shifting on refresh
   #excuse-text  {
-    min-height: 80px;
+    min-height: 200px;
   }
 
 // owls
@@ -70,6 +71,10 @@ $secondary-color: #eee;
     color: inherit;
   }
 
+  #space-below-upvote {
+    height: 50px;
+  }
+
 // top excuses 
 
   #top-excuse-buttons {
@@ -110,4 +115,13 @@ $secondary-color: #eee;
   #bottom-page-space {
     width: 100%;
     height: 30px
+  }
+
+
+// footer
+  
+  #footer {
+    text-align: center;
+    font-size: 1.25em;
+    color: $tertiary-color;
   }

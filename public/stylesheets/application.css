@@ -10,7 +10,7 @@
   .header {
     margin-top: 10%; } }
 #excuse-text {
-  min-height: 80px; }
+  min-height: 200px; }
 
 .owl-row:after {
   content: "";
@@ -44,6 +44,9 @@ a {
   text-decoration: none;
   color: inherit; }
 
+#space-below-upvote {
+  height: 50px; }
+
 #top-excuse-buttons {
   background: #c1d5e5; }
 
@@ -73,5 +76,10 @@ a {
 #bottom-page-space {
   width: 100%;
   height: 30px; }
+
+#footer {
+  text-align: center;
+  font-size: 1.25em;
+  color: #cacaca; }
 
 /*# sourceMappingURL=application.css.map */
