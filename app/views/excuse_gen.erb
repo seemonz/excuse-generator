@@ -5,13 +5,19 @@
 <div class="container">
   <section class="header">
 
-    <% if @beginning == nil %>
+    <% if @upvoted == true %>
+      <div id="excuse-text" >
+       <h4 class="title"><p class="tlt"><%= @current_excuse.beginning.phrase %> because <%= @current_excuse.middle.phrase %> so <%= @current_excuse.final.phrase %></p></h4>
+    </div>
+    <% elsif @beginning == nil %>
       <div id="excuse-text" >
         <h4 class="title"><p class="tlt"><p>why do you need an excuse....</p></p></h4>
       </div>
     <% else %>
       <div id="excuse-text" >
-        <button><a href="/upvote">upvote</a></button>
+        <form method="post" action="/upvote">
+          <button>upvote</button>
+        </form>
         <div id="space-below-upvote"></div>
         <h4 class="title"><p class="tlt"><%= @beginning.phrase %> because <%= @middle.phrase %> so <%= @final.phrase %></p></h4>
       </div>
@@ -58,7 +64,7 @@
   <div id="main-page-space">
   </div>
 
-  <!-- Top 10 
+  <!-- Top Excuses 
   --------------- -->
 
   <div id="top-excuse-head">
