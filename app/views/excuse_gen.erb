@@ -16,6 +16,7 @@
     <% else %>
       <div id="excuse-text" >
         <form method="post" action="/upvote">
+          <input type="hidden" name="current_excuse" value="<%= @current.id %>">
           <button>upvote</button>
         </form>
         <div id="space-below-upvote"></div>
