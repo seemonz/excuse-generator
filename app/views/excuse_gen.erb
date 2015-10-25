@@ -75,7 +75,7 @@
     <div id="top-excuse-list">
       <ul id="top-excuse-ul">
          <% @top5_excuses.each do |excuse| %>
-          <li id="top-excuse-li"><h4 class="tlt"><%= excuse.beginning.phrase %> because <%= excuse.middle.phrase %> so <%= excuse.final.phrase %></h4></li>
+          <li id="top-excuse-li"><h4 class="tlt"><%= excuse.beginning.phrase %> because <%= excuse.middle.phrase %> so <%= excuse.final.phrase %></h4><h3 id=""><%= excuse.upvote_count %></h3></li>
         <% end %>
       </ul>
     </div>

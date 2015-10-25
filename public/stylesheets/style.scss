@@ -40,8 +40,11 @@ $tertiary-color: #cacaca;
     position: relative;
 
     p {
-      background-color: $primary-color;
+      // background-color: $primary-color; buttons before 
+      background-color: white;
       border-radius: 5px;
+      border-style: solid;
+      border-width: 1px;
       position: absolute;
       width: 70%;
       top: 80px;
