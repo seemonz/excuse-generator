@@ -15,10 +15,6 @@
       </div>
     <% else %>
       <div id="excuse-text" >
-        <form method="post" action="/upvote">
-          <input type="hidden" name="current_excuse" value="<%= @current.id %>">
-          <button>upvote</button>
-        </form>
         <div id="space-below-upvote"></div>
         <h4 class="title"><p class="tlt"><%= @beginning.phrase %> because <%= @middle.phrase %> so <%= @final.phrase %></p></h4>
       </div>
@@ -56,8 +52,17 @@
 
   </section>
 
-  
-
+<div id="upcenter">
+  <div id="upvote-b">
+    <form method="post" action="/upvote">
+      <input type="hidden" name="current_excuse" value="<%= @current.id %>">
+      <button>Upvote Excuse</button>
+    </form>
+  </div>
+  <div id="upvote-top">
+    <button><a href="#top5">Top Excuses</a></button>
+  </div>
+</div>
 
   <!-- spacing
   -------- -->
@@ -69,14 +74,14 @@
   --------------- -->
 
   <div id="top-excuse-head">
-    <p><h4>Top Excuses</h4></p>
+    <p><h4><a name="top5">Top Excuses</a></h4></p>
   </div>
 
   <div id="top-excuse">
     <div id="top-excuse-list">
       <ul id="top-excuse-ul">
          <% @top5_excuses.each do |excuse| %>
-          <li id="top-excuse-li"><h4 class="tlt"><%= excuse.beginning.phrase %> because <%= excuse.middle.phrase %> so <%= excuse.final.phrase %></h4><h3 id=""><%= excuse.upvote_count %></h3></li>
+          <li id="top-excuse-li"><h4 class="tlt"><%= excuse.beginning.phrase %> because <%= excuse.middle.phrase %> so <%= excuse.final.phrase %></h4><!-- <h3 id=""><%= excuse.upvote_count %></h3> --></li>
         <% end %>
       </ul>
     </div>
