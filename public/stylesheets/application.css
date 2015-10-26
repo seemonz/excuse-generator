@@ -45,10 +45,16 @@ a {
   text-decoration: none;
   color: inherit; }
 
+#upcenter {
+  position: absolute;
+  right: 0vw;
+  top: 55vh;
+}
+
 #upvote-b {
   margin-top: 12vh;
   position: absolute;
-  right: 10vw;
+  right: 12vw;
 }
 
 #upvote-top {

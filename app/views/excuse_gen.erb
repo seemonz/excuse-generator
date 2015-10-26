@@ -7,17 +7,40 @@
 
     <% if @upvoted == true %>
       <div id="excuse-text" >
+        <p>  &nbsp   </p>
        <h4 class="title"><p class="tlt"><%= @current_excuse.beginning.phrase %> because <%= @current_excuse.middle.phrase %> so <%= @current_excuse.final.phrase %></p></h4>
-    </div>
+      </div>
+      <div id="upcenter">
+        <div id="upvote-top">
+          <button><a href="#top5">Top Excuses</a></button>
+        </div>
+      </div>
     <% elsif @beginning == nil %>
       <div id="excuse-text" >
         <h4 class="title"><p class="tlt"><p>why do you need an excuse....</p></p></h4>
       </div>
+      <div id="upcenter">
+        <div id="upvote-top">
+          <button><a href="#top5">Top Excuses</a></button>
+        </div>
+      </div>
     <% else %>
+      <div id="upcenter">
+        <div id="upvote-b">
+          <form method="post" action="/upvote">
+            <input type="hidden" name="current_excuse" value="<%= @current.id %>">
+            <button>Upvote Excuse</button>
+          </form>
+        </div>
+        <div id="upvote-top">
+          <button><a href="#top5">Top Excuses</a></button>
+        </div>
+      </div>
       <div id="excuse-text" >
         <div id="space-below-upvote"></div>
         <h4 class="title"><p class="tlt"><%= @beginning.phrase %> because <%= @middle.phrase %> so <%= @final.phrase %></p></h4>
       </div>
+
     <% end %>
 
     <!-- Buttons
@@ -52,17 +75,7 @@
 
   </section>
 
-<div id="upcenter">
-  <div id="upvote-b">
-    <form method="post" action="/upvote">
-      <input type="hidden" name="current_excuse" value="<%= @current.id %>">
-      <button>Upvote Excuse</button>
-    </form>
-  </div>
-  <div id="upvote-top">
-    <button><a href="#top5">Top Excuses</a></button>
-  </div>
-</div>
+
 
   <!-- spacing
   -------- -->
