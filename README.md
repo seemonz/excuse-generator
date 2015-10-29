@@ -1,11 +1,8 @@
 Excuse Generator
 ====================
 
-
-
-
-Sinatra
-=============
+Excuse Generator is a small web app developed on the sinatra framework with a sqlite3 db.
+We randomly generate an excuse from a collection of written phrases and save each unique excuse to the database. This allows us to track ratings on each excuse about whether the user thought the excuse was useful or funny.
 
 ## Getting Started
 
